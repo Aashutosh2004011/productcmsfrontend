@@ -71,6 +71,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         return { success: false, error: data.error || 'Login failed' };
       }
     } catch (error) {
+      console.log("🚀 ~ login ~ error:", error)
       return { success: false, error: 'Network error occurred' };
     }
   };

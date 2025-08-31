@@ -56,7 +56,7 @@ export const clientCookies = {
     if (typeof window === 'undefined') return null;
     
     const cookies = document.cookie.split(';');
-    for (let cookie of cookies) {
+    for (const cookie of cookies) {
       const [name, value] = cookie.trim().split('=');
       if (name === COOKIE_NAME) {
         return value || null;

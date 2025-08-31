@@ -24,8 +24,9 @@ export async function POST(request: NextRequest): Promise<NextResponse<AuthRespo
       );
     }
 
-    // Find user with password
-    const user = await (User as any).findByEmailWithPassword(email);
+    // Find user with password using standard Mongoose methods
+    const user = await User.findOne({ email }).select('+password');
+    
     if (!user) {
       return NextResponse.json(
         {
@@ -89,8 +90,3 @@ export async function POST(request: NextRequest): Promise<NextResponse<AuthRespo
     );
   }
 }
-
-
-
-
-

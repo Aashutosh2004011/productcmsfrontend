@@ -27,8 +27,6 @@ import {
   User, 
   Mail, 
   Calendar, 
-  Clock,
-  Shield,
   Activity,
   Package,
   BarChart3,
@@ -587,7 +585,6 @@ interface ProductFormDialogProps {
 }
 
 function ProductFormDialog({ 
-  isOpen, 
   onClose, 
   formData, 
   setFormData, 

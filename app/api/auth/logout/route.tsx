@@ -1,9 +1,9 @@
 // app/api/auth/logout/route.ts
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { removeAuthCookie } from '@/lib/cookies';
 import { AuthResponse } from '@/types/user';
 
-export async function POST(request: NextRequest): Promise<NextResponse<AuthResponse>> {
+export async function POST(): Promise<NextResponse<AuthResponse>> {
   try {
     const response = NextResponse.json({
       success: true,
