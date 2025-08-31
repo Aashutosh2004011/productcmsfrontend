@@ -17,7 +17,7 @@ if (!MONGODB_URI) {
 }
 
 // Use a different global variable name to avoid conflicts
-let cached: MongooseCache = global.mongooseCache || { conn: null, promise: null };
+const cached: MongooseCache = global.mongooseCache || { conn: null, promise: null };
 
 if (!global.mongooseCache) {
   global.mongooseCache = cached;
